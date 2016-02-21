@@ -1,0 +1,4 @@
+[0m[[0mdebug[0m] [0mCopy play resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/home/quikr/workspace/ImageClassifier/public/images/favicon.png,/home/quikr/workspace/ImageClassifier/target/scala-2.10/classes/public/images/favicon.png)[0m
+[0m[[0mdebug[0m] [0m	(/home/quikr/workspace/ImageClassifier/public/stylesheets/main.css,/home/quikr/workspace/ImageClassifier/target/scala-2.10/classes/public/stylesheets/main.css)[0m
+[0m[[0mdebug[0m] [0m	(/home/quikr/workspace/ImageClassifier/public/javascripts/jquery-1.9.0.min.js,/home/quikr/workspace/ImageClassifier/target/scala-2.10/classes/public/javascripts/jquery-1.9.0.min.js)[0m

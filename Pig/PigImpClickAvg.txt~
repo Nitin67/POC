@@ -1,0 +1,14 @@
+AdsAnalytics = load '/home/hduser/input_d/ads.txt' using PigStorage(',')  as (adid:chararray,imp:int,click:int);
+ordr = load '/home/hduser/input_d/order.txt' using PigStorage(',')  as (adid:chararray,cat:chararray,subcat:chararray,city:chararray,credits:chararray);
+Jnd= join AdsAnalytics by adid, ordr by adid;
+grpd = group Jnd by (cat,subcat,city,credits);
+X= foreach grpd generate CONCAT(group.cat,'_',group.subcat,'_',group.city,'_',group.credits);
+k= foreach grpd generate CONCAT(group.cat,'_',group.subcat,'_',group.city,'_',group.credits),  AVG(Jnd.click) as clk, AVG(Jnd.imp) as im;
+
+STORE X INTO '/usr/local/out_micromarket' using PigStorage(',');
+
+STORE k INTO '/usr/local/out_avgimpclick' using PigStorage(',');
+
+Mongo DB
+
+data = LOAD 'mongodb://localhost/pigdb.docs' USING com.mongodb.hadoop.pig.MongoLoader('data:chararray, size:int, style:chararray') AS (data, size, style);
